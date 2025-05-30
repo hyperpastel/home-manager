@@ -3,8 +3,7 @@
 {
 
   imports = [
-    ./hyprland.nix
-    ./zsh.nix
+    ./modules/all.nix
   ];
 
   programs.home-manager.enable = true;
