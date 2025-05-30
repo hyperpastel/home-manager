@@ -1,24 +1,24 @@
-<div align="center">
-  
-# hyperpastel's Home Manager Configuration
-
+<div id="toc" align="center">
+  <ul style="list-style: none">
+    <summary>
+      <h1> hyperpastel's Home Manager Configuration </h1>
+    </summary>
+  </ul>
 </div>
 
-### Structure 
+> [!CAUTION] 
+> These are my personal files, tuned specifically for my own hardware and workflow.
+> This setup **won't work** on your machine without modification. 
 
-> [!IMPORTANT] 
-> These are my personal files, tuned to my own liking, workflow and system.
-> While you're free to use these as they are, I recommend you treat this as a reference instead.
+This repository houses my Home-Manager configuration. It is [flake](https://nixos.wiki/wiki/Flakes)-based and uses Home Manager as [standalone](https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-standalone).
 
-This configuration uses standalone home-manager with flakes.
+## 🧱 Structure
 
-#### ❄️ home.nix
+### ❄️ home.nix
 
-Contains the bulk of the configuration. 
-Basic information home manager needs for it's management,
-as well as simple configurations for various programs.
+This file contains the bulk of the configuration and is intended as the entry point. Within is basic information home manager needs for 
+it's management, as well as several simple configurations for various programs.
 
+### 📁 modules
 
-#### 📁 modules
-
-Contains more elaborate configurations, where each file name corresponds to the application it configures.
+This folder contains more elaborate configurations for various software I use. Each file name corresponds to the application being configured in that file.
