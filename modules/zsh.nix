@@ -15,7 +15,7 @@
 
     shellAliases = {
       l = "eza -la";
-      update = "sudo nixos-rebuild switch --flake ~/system";
+      update = "sudo nixos-rebuild switch --flake ~/.config/system";
       power = "cat /sys/class/power_supply/BAT0/capacity";
 
       # Quick commands for editing important configurations
