@@ -28,6 +28,8 @@
       u = "cd ~/uni";
       d = "cd ~/documents";
       o = "cd ~/downloads";
+
+      deez = "nix develop -c $SHELL";
     };
 
     initContent = ''
