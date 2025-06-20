@@ -1,3 +1,9 @@
+{ lib, ... }:
+
+let
+  current_wallpaper = "~/.config/home-manager/wallpaper.jpg";
+in
+
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -8,8 +14,13 @@
       "$menu" = "wofi --show drun";
 
       "$mod" = "SUPER";
+      exec-once = [
+        "hyprpaper"
+      ];
       bind =
         [
+          "$mod, M, exit"
+          "$mod, F, fullscreen"
           "$mod, F, fullscreen"
           "$mod, W, killactive"
           "$mod, Q, exec, $term"
@@ -27,6 +38,21 @@
             ]
           ) 9
         ));
+    };
+  };
+
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "on";
+      preload = [ current_wallpaper ];
+      wallpaper = [
+        (lib.strings.concatStrings [
+          "eDP-1"
+          ","
+          "${current_wallpaper}"
+        ])
+      ];
     };
   };
 }

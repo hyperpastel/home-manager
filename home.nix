@@ -34,7 +34,7 @@
 
   programs.kitty = {
     enable = true;
-    themeFile = "rose-pine";
+    themeFile = "base2tone-forest-dark";
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 10;
