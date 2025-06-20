@@ -18,6 +18,8 @@
       update = "sudo nixos-rebuild switch --flake ~/.config/system";
       power = "cat /sys/class/power_supply/BAT0/capacity";
 
+      hms = "home-manager switch";
+
       # Quick commands for editing important configurations
       vimconfig = "nix shell nixpkgs\\#lua-language-server --command nvim --cmd \"cd ~/.config/nvim\" ~/.config/nvim/init.lua";
       hmconfig = "nvim --cmd \"cd ~/.config/home-manager/\" ~/.config/home-manager/";
