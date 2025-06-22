@@ -21,7 +21,6 @@ in
         [
           "$mod, M, exit"
           "$mod, F, fullscreen"
-          "$mod, F, fullscreen"
           "$mod, W, killactive"
           "$mod, Q, exec, $term"
           "$mod, Space, exec, $menu"
