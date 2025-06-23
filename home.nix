@@ -34,7 +34,7 @@
 
   programs.kitty = {
     enable = true;
-    themeFile = "base2tone-forest-dark";
+    themeFile = "everforest_dark_hard";
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 10;

@@ -1,6 +1,5 @@
 {
   pkgs,
-  flake-inputs,
   ...
 }:
 
@@ -9,100 +8,188 @@ let
 in
 
 {
-  imports = [
-    flake-inputs.nur.modules.homeManager.default
-  ];
-
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox-esr;
 
-    profiles = {
-      default = {
-        id = 0;
-        isDefault = true;
+    # Strongly inspired by
+    # https://github.com/MultisampledNight/core/blob/main/system/platform/desktop.nix#L221
 
-        settings = {
-          "browser.urlbar.placeholderName" = "dragon power";
-          "browser.urlbar.sponsoredTopSites" = false;
-          "browser.startup.homepage" = "https://nixos.org";
+    policies = {
+
+      Preferences = {
+        "browser.preferences.defaultPerformanceSettings.enabled" = false;
+        "browser.toolbar.bookmarks.visibility" = "newtab";
+        "browser.toolbars.bookmarks.visibility" = "newtab";
+        "browser.urlbar.suggest.bookmark" = false;
+        "browser.urlbar.suggest.history" = false;
+        "browser.urlbar.suggest.openpage" = false;
+        "browser.urlbar.suggest.recentsearches" = false;
+        "browser.urlbar.suggest.topsites" = false;
+        "browser.urlbar.placeholderName" = "dragon power";
+        "browser.startup.homepage" = "about:home";
+        "browser.warnOnQuit" = false;
+        "browser.warnOnQuitShortcut" = false;
+        "places.history.enabled" = "false";
+        "privacy.resistFingerprinting" = true;
+        "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = true;
+      };
+
+      # Frick uppercase names
+      DownloadDirectory = "\${home}/downloads";
+
+      Cookies = {
+        Behavior = "reject-foreign";
+        BehaviorPrivateBrowsing = "reject";
+        Locked = true;
+      };
+
+      SanitizeOnShutdown = {
+        Cache = true;
+        Cookies = true;
+        Downloads = false;
+        FormData = true;
+        History = true;
+        Sessions = true;
+        SiteSettings = true;
+        OfflineApps = true;
+        Locked = false;
+      };
+
+      EnableTrackingProtection = {
+        Value = true;
+        Cryptomining = true;
+        Fingerprinting = true;
+        EmailTracking = true;
+      };
+
+      FirefoxHome = {
+        Search = true;
+        TopSites = false;
+        SponsoredTopSites = false;
+        Highlights = false;
+        Pocket = false;
+        SponsoredPocket = false;
+        Snippets = false;
+        Locked = true;
+      };
+
+      UserMessaging = {
+        ExtensionsRecommendations = false;
+        FeatureRecommendations = false;
+        UrlbarInterventions = false;
+        SkipOnboarding = true;
+        MoreFromMozilla = false;
+        Locked = true;
+      };
+
+      Permissions = {
+        Camera.BlockNewRequests = true;
+        Microphone.BlockNewRequests = true;
+        Location.BlockNewRequests = true;
+        Notifications.BlockNewRequests = true;
+        Autoplay.Default = "block-audio-video";
+      };
+
+      NetworkPrediction = false;
+      DNSOverHTTPS = {
+        Enabled = true;
+        Fallback = true;
+      };
+
+      OverridePostUpdatePage = "";
+      NoDefaultBookmarks = true;
+      DontCheckDefaultBrowser = true;
+      OfferToSaveLogins = false;
+      PasswordManagerEnabled = false;
+      PromptForDownloadLocation = false;
+      HardwareAcceleration = true;
+
+      AutofillAddressEnabled = false;
+      AutofillCreditCardEnabled = false;
+
+      DisableFormHistory = true;
+      DisableBuiltinPDFViewer = true;
+      DisableFirefoxAccounts = true;
+      DisableFirefoxScreenshots = true;
+      DisableFirefoxStudies = true;
+      DisablePocket = true;
+      DisableProfileImport = true;
+      DisableTelemetry = true;
+      DisableSetDesktopBackground = true;
+
+      ShowHomeButton = false;
+      DisplayBookmarksToolbar = "never";
+      DisplayMenuBar = "never";
+
+      ExtensionSettings = {
+        # uBlock Origin
+        "uBlock0@raymondhill.net" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+          installation_mode = "force_installed";
         };
 
-        extensions = {
-          packages = with pkgs.nur.repos.rycee.firefox-addons; [
-            ublock-origin
-          ];
+        # Everforest Dark Hard Theme
+        "{85d627f6-d0bd-4bf7-892b-705aeb81c86c}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/file/4508410/everforest_dark_hard_theme-1.8.xpi";
+          installation_mode = "force_installed";
         };
+      };
 
-        search = {
-          force = true;
-          default = "ddg";
-          engines = {
-            bing.metaData.hidden = true;
-            google.metaData.hidden = true;
+      SearchBar = "unified";
+      SearchEngines = {
+        PreventInstalls = true;
 
-            "Nix Packages" = {
-              definedAliases = [ "@np" ];
-              icon = nixos-icon;
-              urls = [
-                {
-                  template = "https://search.nixos.org/packages";
-                  params = [
-                    {
-                      name = "query";
-                      value = "{searchTerms}";
-                    }
-                  ];
-                }
-              ];
-            };
-            "Nix Options" = {
-              definedAliases = [ "@no" ];
-              icon = nixos-icon;
-              urls = [
-                {
-                  template = "https://search.nixos.org/options";
-                  params = [
-                    {
-                      name = "query";
-                      value = "{searchTerms}";
-                    }
-                  ];
-                }
-              ];
-            };
-            "Home Manager Options" = {
-              definedAliases = [ "@ho" ];
-              icon = nixos-icon;
-              urls = [
-                {
-                  template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";
-                }
-              ];
-            };
+        Default = "DuckDuckGo";
+        Add = [
 
-            # Links for competitive Pokemon
+          {
+            Name = "Nix Packages";
+            Alias = "@np";
+            IconURL = nixos-icon;
+            URLTemplate = "https://search.nixos.org/packages?query={searchTerms}";
+            Method = "GET";
+          }
 
-            "Smogon SV" = {
-              definedAliases = [ "@smsv" ];
-              icon = "https://www.smogon.com/favicon.ico";
-              urls = [
-                {
-                  template = "https://www.smogon.com/dex/sv/pokemon/{searchTerms}/";
-                }
-              ];
-            };
+          {
+            Name = "Nix Options";
+            Alias = "@no";
+            IconURL = nixos-icon;
+            URLTemplate = "https://search.nixos.org/options?query={searchTerms}";
+            Method = "GET";
+          }
 
-            "Bulbapedia" = {
-              definedAliases = [ "@bp" ];
-              icon = "https://bulbapedia.bulbagarden.net/favicon.ico";
-              urls = [
-                {
-                  template = "https://bulbapedia.bulbagarden.net/w/index.php?title=Special%3ASearch&search={searchTerms}";
-                }
-              ];
-            };
-          };
-        };
+          {
+            Name = "Home Manager Options";
+            Alias = "@ho";
+            IconURL = nixos-icon;
+            URLTemplate = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";
+            Method = "GET";
+          }
+
+          {
+            Name = "Smogon SV";
+            Alias = "@smsv";
+            Description = "Search Smogon SV Pokedex";
+            IconURL = "https://www.smogon.com/favicon.ico";
+            URLTemplate = "https://www.smogon.com/dex/sv/pokemon/{searchTerms}/";
+            Method = "GET";
+          }
+
+          {
+            Name = "Bulbapedia";
+            Alias = "@bp";
+            IconURL = "https://bulbapedia.bulbagarden.net/favicon.ico";
+            URLTemplate = "https://bulbapedia.bulbagarden.net/w/index.php?title=Special%3ASearch&search={searchTerms}";
+            Method = "GET";
+          }
+
+        ];
+
+        Remove = [
+          "Google"
+          "Bing"
+        ];
       };
     };
   };
