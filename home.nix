@@ -61,10 +61,9 @@
 
   services.mako = {
     enable = true;
-    settings = 
-      {
-          layer = "overlay";
-          default-timeout = 5000;
-      };
+    settings = {
+      layer = "overlay";
+      default-timeout = 5000;
+    };
   };
 }

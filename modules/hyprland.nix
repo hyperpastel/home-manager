@@ -14,6 +14,11 @@ in
       "$menu" = "wofi --show drun";
 
       "$mod" = "SUPER";
+
+      windowrule = [
+        "opacity 0.8 0.8 0.8, class:kitty"
+      ];
+
       exec-once = [
         "hyprpaper"
       ];
@@ -24,19 +29,34 @@ in
           "$mod, W, killactive"
           "$mod, Q, exec, $term"
           "$mod, Space, exec, $menu"
+
+          "$mod SHIFT, H, movewindow, l"
+          "$mod SHIFT, L, movewindow, r"
+          "$mod SHIFT, K, movewindow, u"
+          "$mod SHIFT, J, movewindow, d"
+
+          "$mod, H, movefocus, l"
+          "$mod, L, movefocus, r"
+          "$mod, K, movefocus, u"
+          "$mod, J, movefocus, d"
+
         ]
-        ++ (builtins.concatLists (
+        ++ builtins.concatLists (
           builtins.genList (
-            i:
+            x:
             let
-              ws = i + 1;
+              ws =
+                let
+                  c = (x + 1) / 10;
+                in
+                builtins.toString (x + 1 - (c * 10));
             in
             [
-              "$mod, code:1${toString i}, workspace, ${toString ws}"
-              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+              "$mod, ${ws}, workspace, ${toString (x + 1)}"
+              "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
             ]
-          ) 9
-        ));
+          ) 10
+        );
     };
   };
 
