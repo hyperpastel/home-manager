@@ -16,11 +16,17 @@
     stateVersion = "24.11";
 
     packages = with pkgs; [
-      zathura
       wofi
       element-desktop
       nixd
     ];
+  };
+
+  programs.zathura = {
+        enable = true;
+        options = {
+           show-recent = 0;
+        };
   };
 
   programs.git = {
