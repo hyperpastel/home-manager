@@ -11,8 +11,8 @@
   programs.home-manager.enable = true;
 
   home = {
-    username = "tori";
-    homeDirectory = "/home/tori";
+    username = "v";
+    homeDirectory = "/home/v";
     stateVersion = "24.11";
 
     packages = with pkgs; [

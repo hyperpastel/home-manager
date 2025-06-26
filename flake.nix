@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of tori";
+  description = "Home Manager configuration of hyperpastel";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -22,7 +22,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."tori" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.v = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs.flake-inputs = inputs;
         modules = [ ./home.nix ];
