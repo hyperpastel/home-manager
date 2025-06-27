@@ -19,14 +19,16 @@
       wofi
       element-desktop
       nixd
+
+      wineWow64Packages.stagingFull
     ];
   };
 
   programs.zathura = {
-        enable = true;
-        options = {
-           show-recent = 0;
-        };
+    enable = true;
+    options = {
+      show-recent = 0;
+    };
   };
 
   programs.git = {

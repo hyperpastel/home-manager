@@ -167,6 +167,8 @@ in
             Method = "GET";
           }
 
+          # Wikis for video games
+
           {
             Name = "Smogon SV";
             Alias = "@smsv";
@@ -181,6 +183,14 @@ in
             Alias = "@bp";
             IconURL = "https://bulbapedia.bulbagarden.net/favicon.ico";
             URLTemplate = "https://bulbapedia.bulbagarden.net/w/index.php?title=Special%3ASearch&search={searchTerms}";
+            Method = "GET";
+          }
+
+          {
+            Name = "Heroes 3 Wiki";
+            Alias = "@h3";
+            IconURL = "https://heroes.thelazy.net/favicon.ico";
+            URLTemplate = "https://heroes.thelazy.net/index.php?search={searchTerms}&title=Special%3ASearch&go=Go";
             Method = "GET";
           }
 
