@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   ...
 }:
 
@@ -122,19 +123,21 @@ in
       DisplayBookmarksToolbar = "never";
       DisplayMenuBar = "never";
 
-      ExtensionSettings = {
-        # uBlock Origin
-        "uBlock0@raymondhill.net" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-          installation_mode = "force_installed";
-        };
-
-        # Everforest Dark Hard Theme
-        "{85d627f6-d0bd-4bf7-892b-705aeb81c86c}" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/file/4508410/everforest_dark_hard_theme-1.8.xpi";
-          installation_mode = "force_installed";
-        };
-      };
+      ExtensionSettings =
+        let
+          extension = sid: uuid: {
+            name = uuid;
+            value = {
+              install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${sid}/latest.xpi";
+              installation_mode = "normal_installed";
+            };
+          };
+        in
+        lib.listToAttrs [
+          (extension "ublock-origin" "uBlock0@raymondhill.net")
+          (extension "everforest-dark-hard-theme" "{85d627f6-d0bd-4bf7-892b-705aeb81c86c}")
+          (extension "pkmn-randbats-tooltip" "{45a77b05-36c2-4f0f-864b-309d1916bb2a}")
+        ];
 
       SearchBar = "unified";
       SearchEngines = {
