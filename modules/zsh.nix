@@ -31,6 +31,7 @@
       d = "cd ~/documents";
       o = "cd ~/downloads";
 
+      # deez stands for deevelop zsh
       deez = "nix develop -c $SHELL";
     };
 
