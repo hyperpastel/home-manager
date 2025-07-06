@@ -120,7 +120,7 @@ in
       DisableSetDesktopBackground = true;
 
       ShowHomeButton = false;
-      DisplayBookmarksToolbar = "never";
+      # DisplayBookmarksToolbar = "never";
       DisplayMenuBar = "never";
 
       ExtensionSettings =
@@ -138,6 +138,29 @@ in
           (extension "everforest-dark-hard-theme" "{85d627f6-d0bd-4bf7-892b-705aeb81c86c}")
           (extension "pkmn-randbats-tooltip" "{45a77b05-36c2-4f0f-864b-309d1916bb2a}")
         ];
+
+      Bookmarks =
+        let
+          mark = Title: URL: Favicon: { inherit Title URL Favicon; };
+          groupByFolder = name: marks: (map (mark: mark // { Folder = name; }) marks);
+        in
+
+        # TODO Replace this once I have a proper favicon (this site isn't actually up LOL)
+        [ (mark "Home" "https://hyperpas.tel" nixos-icon) ]
+
+        ++ (groupByFolder "Pokemon" [
+          (mark "Showdown" "https:/play.pokemonshowdown.com/" "https://play.pokemonshowdown.com/favicon.ico")
+          (mark "Smogon Forums" "https://smogon.com/forums" "https://www.smogon.com/favicon.ico")
+        ])
+
+        ++ (groupByFolder "Coding" [
+          (mark "Leetcode" "https://leetcode.com"
+            "https://assets.leetcode.com/static_assets/public/icons/favicon-16x16.png"
+          )
+          (mark "Github" "https://github.com/hyperpastel"
+            "https://github.githubassets.com/favicons/favicon.svg"
+          )
+        ]);
 
       SearchBar = "unified";
       SearchEngines = {
