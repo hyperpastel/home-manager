@@ -21,6 +21,11 @@
       nixd
 
       wineWow64Packages.stagingFull
+      wl-clipboard
+
+      # For screenshots
+      grim
+      slurp
     ];
   };
 

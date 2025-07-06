@@ -30,6 +30,8 @@ in
           "$mod, Q, exec, $term"
           "$mod, Space, exec, $menu"
 
+          "$mod SHIFT, S, exec, grim -g \"$(slurp -d)\" - | wl-copy" 
+
           "$mod SHIFT, H, movewindow, l"
           "$mod SHIFT, L, movewindow, r"
           "$mod SHIFT, K, movewindow, u"
