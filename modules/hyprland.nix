@@ -15,10 +15,6 @@ in
 
       "$mod" = "SUPER";
 
-      windowrule = [
-        "opacity 0.8 0.8 0.8, class:kitty"
-      ];
-
       exec-once = [
         "hyprpaper"
       ];
@@ -26,6 +22,7 @@ in
         [
           "$mod, M, exit"
           "$mod, F, fullscreen"
+          "$mod, T, togglefloating"
           "$mod, W, killactive"
           "$mod, Q, exec, $term"
           "$mod, Space, exec, $menu"
@@ -55,7 +52,7 @@ in
             in
             [
               "$mod, ${ws}, workspace, ${toString (x + 1)}"
-              "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+              "$mod SHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
             ]
           ) 10
         );
