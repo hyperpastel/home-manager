@@ -1,6 +1,7 @@
 { lib, ... }:
 
 let
+  # Source: https://www.pxfuel.com/en/desktop-wallpaper-psivv
   current_wallpaper = "~/.config/home-manager/wallpaper.jpg";
 in
 
