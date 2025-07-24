@@ -17,7 +17,6 @@ in
     # https://github.com/MultisampledNight/core/blob/main/system/platform/desktop.nix#L221
 
     policies = {
-
       Preferences = {
         "browser.preferences.defaultPerformanceSettings.enabled" = false;
         "browser.toolbar.bookmarks.visibility" = "newtab";
@@ -135,8 +134,7 @@ in
         in
         lib.listToAttrs [
           (extension "ublock-origin" "uBlock0@raymondhill.net")
-          (extension "everforest-dark-hard-theme" "{85d627f6-d0bd-4bf7-892b-705aeb81c86c}")
-          (extension "pkmn-randbats-tooltip" "{45a77b05-36c2-4f0f-864b-309d1916bb2a}")
+          (extension "rose-pine-dark-theme" "{84496095-b7ad-496e-bce3-51cca2e43703}")
         ];
 
       Bookmarks =
@@ -148,17 +146,32 @@ in
         # TODO Replace this once I have a proper favicon (this site isn't actually up LOL)
         [ (mark "Home" "https://hyperpas.tel" nixos-icon) ]
 
-        ++ (groupByFolder "Pokemon" [
-          (mark "Showdown" "https:/play.pokemonshowdown.com/" "https://play.pokemonshowdown.com/favicon.ico")
-          (mark "Smogon Forums" "https://smogon.com/forums" "https://www.smogon.com/favicon.ico")
-        ])
-
         ++ (groupByFolder "Coding" [
           (mark "Leetcode" "https://leetcode.com"
             "https://assets.leetcode.com/static_assets/public/icons/favicon-16x16.png"
           )
           (mark "Github" "https://github.com/hyperpastel"
             "https://github.githubassets.com/favicons/favicon.svg"
+          )
+          (mark "Codeforces" "https://codeforces.com/"
+            "https://codeforces.org/s/12212/android-icon-192x192.png"
+          )
+        ])
+
+        ++ (groupByFolder "Uni" [
+          (mark "TUC" "https://tu-chemnitz.de" "https://www.tu-chemnitz.de/tucal4/img/tuc.png")
+          (mark "Opal" "https://bildungsportal.sachsen.de/opal"
+            "https://bildungsportal.sachsen.de/opal/raw/20250716/themes/opal_new/favicon.ico"
+          )
+        ])
+
+        ++ (groupByFolder "Genshin" [
+          (mark "Ascension Planner" "https://www.genshin-center.com/planner"
+            "https://www.genshin-center.com/favicon.ico"
+          )
+          (mark "Interactive Map"
+            "https://act.hoyolab.com/ys/app/interactive-map/index.html?lang=en-us#/map/2"
+            "https://act.hoyolab.com/ys/app/interactive-map/mapicon.png"
           )
         ]);
 
@@ -190,25 +203,6 @@ in
             Alias = "@ho";
             IconURL = nixos-icon;
             URLTemplate = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";
-            Method = "GET";
-          }
-
-          # Wikis for video games
-
-          {
-            Name = "Smogon SV";
-            Alias = "@smsv";
-            Description = "Search Smogon SV Pokedex";
-            IconURL = "https://www.smogon.com/favicon.ico";
-            URLTemplate = "https://www.smogon.com/dex/sv/pokemon/{searchTerms}/";
-            Method = "GET";
-          }
-
-          {
-            Name = "Bulbapedia";
-            Alias = "@bp";
-            IconURL = "https://bulbapedia.bulbagarden.net/favicon.ico";
-            URLTemplate = "https://bulbapedia.bulbagarden.net/w/index.php?title=Special%3ASearch&search={searchTerms}";
             Method = "GET";
           }
 
