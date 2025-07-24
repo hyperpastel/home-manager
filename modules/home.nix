@@ -1,11 +1,14 @@
 {
   pkgs,
+  flake-inputs,
   ...
 }:
 
 {
   imports = [
-    ./modules/all.nix
+    ./hyprland.nix
+    ./zsh.nix
+    ./firefox.nix
   ];
 
   programs.home-manager.enable = true;
@@ -26,6 +29,11 @@
       # For screenshots
       grim
       slurp
+
+      # needed for neovim treesitter
+      nodejs
+      gcc
+
     ];
   };
 
@@ -33,6 +41,7 @@
     enable = true;
     options = {
       show-recent = 0;
+      selection-clipboard = "clipboard";
     };
   };
 
@@ -47,7 +56,7 @@
 
   programs.kitty = {
     enable = true;
-    themeFile = "everforest_dark_hard";
+    themeFile = "rose-pine-moon";
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 10;
@@ -79,4 +88,5 @@
       default-timeout = 5000;
     };
   };
+
 }

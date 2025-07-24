@@ -25,7 +25,7 @@
       homeConfigurations.v = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs.flake-inputs = inputs;
-        modules = [ ./home.nix ];
+        modules = [ ./modules/home.nix ];
       };
     };
 }
