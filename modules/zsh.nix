@@ -31,6 +31,10 @@
       d = "cd ~/documents";
       o = "cd ~/downloads";
 
+      # Wireplumber 
+      mute = "wpctl set-mute @DEFAULT_SINK@ 1";
+      unmute = "wpctl set-mute @DEFAULT_SINK@ 0";
+
       # deez stands for deevelop zsh
       deez = "nix develop -c $SHELL";
     };
