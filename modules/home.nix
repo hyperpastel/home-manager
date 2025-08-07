@@ -33,7 +33,7 @@
       # needed for neovim treesitter
       nodejs
       gcc
-
+      c3c
     ];
   };
 
