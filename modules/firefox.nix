@@ -163,16 +163,6 @@ in
           (mark "Opal" "https://bildungsportal.sachsen.de/opal"
             "https://bildungsportal.sachsen.de/opal/raw/20250716/themes/opal_new/favicon.ico"
           )
-        ])
-
-        ++ (groupByFolder "Genshin" [
-          (mark "Ascension Planner" "https://www.genshin-center.com/planner"
-            "https://www.genshin-center.com/favicon.ico"
-          )
-          (mark "Interactive Map"
-            "https://act.hoyolab.com/ys/app/interactive-map/index.html?lang=en-us#/map/2"
-            "https://act.hoyolab.com/ys/app/interactive-map/mapicon.png"
-          )
         ]);
 
       SearchBar = "unified";
