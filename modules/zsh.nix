@@ -1,3 +1,6 @@
+let
+  PROMPT = "'\${PROJECT_PREFIX:+\$(__get_shell_prefix) }[%1~] %F{green}\${vcs_info_msg_0_}%F{white}$ '";
+in
 {
   programs.zsh = {
     enable = true;
@@ -31,7 +34,7 @@
       d = "cd ~/documents";
       o = "cd ~/downloads";
 
-      # Wireplumber 
+      # Wireplumber
       mute = "wpctl set-mute @DEFAULT_SINK@ 1";
       unmute = "wpctl set-mute @DEFAULT_SINK@ 0";
 
@@ -45,8 +48,12 @@
 
       zstyle ':vcs_info:git:*' formats '(%b) '
 
+      __get_shell_prefix() {
+        echo "[%F{red}$PROJECT_PREFIX%f]"
+      }
+
       setopt PROMPT_SUBST
-      PROMPT='[%1~] %F{green}''\${vcs_info_msg_0_}%F{white}$ '
+      PROMPT=${PROMPT}
     '';
   };
 }
