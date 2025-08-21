@@ -22,6 +22,7 @@
       wofi
       element-desktop
       nixd
+      typos-lsp
 
       wineWow64Packages.stagingFull
       wl-clipboard
@@ -33,7 +34,7 @@
       # needed for neovim treesitter
       nodejs
       gcc
-      c3c
+      # c3c
     ];
   };
 
