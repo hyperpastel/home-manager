@@ -150,11 +150,19 @@ in
           (mark "Leetcode" "https://leetcode.com"
             "https://assets.leetcode.com/static_assets/public/icons/favicon-16x16.png"
           )
-          (mark "Github" "https://github.com/hyperpastel"
-            "https://github.githubassets.com/favicons/favicon.svg"
-          )
           (mark "Codeforces" "https://codeforces.com/"
             "https://codeforces.org/s/12212/android-icon-192x192.png"
+          )
+        ])
+
+        ++ (groupByFolder "Github" [
+
+          (mark "hyperpastel" "https://github.com/hyperpastel"
+            "https://github.githubassets.com/favicons/favicon.svg"
+          )
+
+          (mark "c3c" "https://github.com/c3lang/c3c"
+            "https://github.githubassets.com/favicons/favicon.svg"
           )
         ])
 
