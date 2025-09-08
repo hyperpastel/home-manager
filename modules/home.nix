@@ -28,6 +28,7 @@
       wl-clipboard
 
       # For screenshots
+      grimblast
       grim
       slurp
 
