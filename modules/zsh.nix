@@ -38,8 +38,16 @@ in
       mute = "wpctl set-mute @DEFAULT_SINK@ 1";
       unmute = "wpctl set-mute @DEFAULT_SINK@ 0";
 
+      # nmcli
+      wifi = "nmcli device wifi";
+
       # deez stands for deevelop zsh
       deez = "nix develop -c $SHELL";
+
+      # quickly open relevant files
+      flake = "$EDITOR flake.nix";
+      makelists = "$EDITOR CMakeLists.txt";
+      makefile = "$EDITOR Makefile";
     };
 
     initContent = ''
