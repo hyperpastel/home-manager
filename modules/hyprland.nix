@@ -28,7 +28,7 @@ in
           "$mod, Q, exec, $term"
           "$mod, Space, exec, $menu"
 
-          "$mod SHIFT, S, exec, grimblast --freeze copy area | grim" 
+          "$mod SHIFT, S, exec, grimblast --freeze copy area"
 
           "$mod SHIFT, H, movewindow, l"
           "$mod SHIFT, L, movewindow, r"
