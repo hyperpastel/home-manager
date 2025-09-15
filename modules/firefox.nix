@@ -157,7 +157,7 @@ in
 
         ++ (groupByFolder "Github" [
 
-          (mark "hyperpastel" "https://github.com/hyperpastel"
+          (mark "hyperpastel" "https://github.com/hyperpastel?tab=repositories"
             "https://github.githubassets.com/favicons/favicon.svg"
           )
 
