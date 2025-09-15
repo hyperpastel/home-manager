@@ -161,9 +161,7 @@ in
             "https://github.githubassets.com/favicons/favicon.svg"
           )
 
-          (mark "c3c" "https://github.com/c3lang/c3c"
-            "https://github.githubassets.com/favicons/favicon.svg"
-          )
+          (mark "c3c" "https://github.com/c3lang/c3c" "https://github.githubassets.com/favicons/favicon.svg")
         ])
 
         ++ (groupByFolder "Uni" [

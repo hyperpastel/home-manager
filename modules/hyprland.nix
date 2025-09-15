@@ -19,44 +19,43 @@ in
       exec-once = [
         "hyprpaper"
       ];
-      bind =
-        [
-          "$mod, M, exit"
-          "$mod, F, fullscreen"
-          "$mod, T, togglefloating"
-          "$mod, W, killactive"
-          "$mod, Q, exec, $term"
-          "$mod, Space, exec, $menu"
+      bind = [
+        "$mod, M, exit"
+        "$mod, F, fullscreen"
+        "$mod, T, togglefloating"
+        "$mod, W, killactive"
+        "$mod, Q, exec, $term"
+        "$mod, Space, exec, $menu"
 
-          "$mod SHIFT, S, exec, grimblast --freeze copy area"
+        "$mod SHIFT, S, exec, grimblast --freeze copy area"
 
-          "$mod SHIFT, H, movewindow, l"
-          "$mod SHIFT, L, movewindow, r"
-          "$mod SHIFT, K, movewindow, u"
-          "$mod SHIFT, J, movewindow, d"
+        "$mod SHIFT, H, movewindow, l"
+        "$mod SHIFT, L, movewindow, r"
+        "$mod SHIFT, K, movewindow, u"
+        "$mod SHIFT, J, movewindow, d"
 
-          "$mod, H, movefocus, l"
-          "$mod, L, movefocus, r"
-          "$mod, K, movefocus, u"
-          "$mod, J, movefocus, d"
+        "$mod, H, movefocus, l"
+        "$mod, L, movefocus, r"
+        "$mod, K, movefocus, u"
+        "$mod, J, movefocus, d"
 
-        ]
-        ++ builtins.concatLists (
-          builtins.genList (
-            x:
-            let
-              ws =
-                let
-                  c = (x + 1) / 10;
-                in
-                builtins.toString (x + 1 - (c * 10));
-            in
-            [
-              "$mod, ${ws}, workspace, ${toString (x + 1)}"
-              "$mod SHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
-            ]
-          ) 10
-        );
+      ]
+      ++ builtins.concatLists (
+        builtins.genList (
+          x:
+          let
+            ws =
+              let
+                c = (x + 1) / 10;
+              in
+              builtins.toString (x + 1 - (c * 10));
+          in
+          [
+            "$mod, ${ws}, workspace, ${toString (x + 1)}"
+            "$mod SHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
+          ]
+        ) 10
+      );
     };
   };
 
