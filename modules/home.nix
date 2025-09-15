@@ -60,8 +60,8 @@
     enable = true;
     themeFile = "rose-pine-moon";
     font = {
-      name = "JetBrainsMono Nerd Font";
-      size = 10;
+      name = "IovsevkaTermSlab Nerd Font";
+      size = 8;
     };
   };
 
