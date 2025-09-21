@@ -47,15 +47,6 @@
     };
   };
 
-  programs.git = {
-    enable = true;
-    userName = "hyperpastel";
-    userEmail = "vmutze04@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
-  };
-
   programs.kitty = {
     enable = true;
     themeFile = "rose-pine-moon";
