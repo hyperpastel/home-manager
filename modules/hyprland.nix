@@ -9,7 +9,6 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      "monitor" = "eDP-1,1920x1200,auto,1";
 
       "$term" = "kitty";
       "$menu" = "wofi --show drun";

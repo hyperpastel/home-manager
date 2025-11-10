@@ -9,8 +9,8 @@
     };
 
     scripts = {
-        url = "github:hyperpastel/scripts";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hyperpastel/scripts";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
@@ -27,10 +27,17 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations.v = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."v@teyvat" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs.flake-inputs = inputs;
-        modules = [ ./modules/home.nix ];
+        modules = [ ./hosts/teyvat ];
       };
+
+      homeConfigurations."v@darksea" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs.flake-inputs = inputs;
+        modules = [ ./hosts/darksea ];
+      };
+
     };
 }

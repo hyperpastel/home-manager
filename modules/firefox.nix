@@ -173,7 +173,7 @@ in
         ])
 
         ++ (groupByFolder "Docs") [
-            (mark "Typst Docs" "https://typst.app/docs/" "https://typst.app/assets/apple-touch-icon.png")
+          (mark "Typst Docs" "https://typst.app/docs/" "https://typst.app/assets/apple-touch-icon.png")
         ]
 
         ++ (groupByFolder "Uni" [

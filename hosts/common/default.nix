@@ -6,9 +6,9 @@
 
 {
   imports = [
-    ./hyprland.nix
-    ./zsh.nix
-    ./firefox.nix
+    ../../modules/hyprland.nix
+    ../../modules/zsh.nix
+    ../../modules/firefox.nix
   ];
 
   programs.home-manager.enable = true;
