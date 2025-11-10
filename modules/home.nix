@@ -50,7 +50,7 @@
     themeFile = "rose-pine-moon";
     font = {
       name = "IovsevkaTermSlab Nerd Font";
-      size = 8;
+      size = 10;
     };
   };
 
