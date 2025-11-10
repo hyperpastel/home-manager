@@ -43,6 +43,7 @@
         # Programs for typst
         typst
         tinymist
+        typstyle
 
         # Various fonts
         noto-fonts
