@@ -33,6 +33,7 @@ in
       u = "cd ~/uni";
       d = "cd ~/documents";
       o = "cd ~/downloads";
+      k = "cd ~/know";
 
       # Wireplumber
       mute = "wpctl set-mute @DEFAULT_SINK@ 1";
@@ -48,6 +49,17 @@ in
       flake = "$EDITOR flake.nix";
       makelists = "$EDITOR CMakeLists.txt";
       makefile = "$EDITOR Makefile";
+
+      # Semesterwise aliases for courses
+      fp = "cd ~/uni/fp/";
+      cb = "cd ~/uni/cb/";
+      se = "cd ~/uni/se/";
+      hs = "cd ~/uni/hs/";
+      db = "cd ~/uni/db/";
+      alg = "cd ~/uni/algebra/";
+
+      opsol = "zathura solution.pdf & disown";
+      optask = "zathura task.pdf & disown";
     };
 
     initContent = ''

@@ -146,13 +146,21 @@ in
         # TODO Replace this once I have a proper favicon (this site isn't actually up LOL)
         [ (mark "Home" "https://hyperpas.tel" nixos-icon) ]
 
-        ++ (groupByFolder "Coding" [
+        ++ (groupByFolder "Competitive Coding" [
           (mark "Leetcode" "https://leetcode.com"
             "https://assets.leetcode.com/static_assets/public/icons/favicon-16x16.png"
           )
-          (mark "Codeforces" "https://codeforces.com/"
+          (mark "Codeforces Home" "https://codeforces.com/"
             "https://codeforces.org/s/12212/android-icon-192x192.png"
           )
+          (mark "Codeforces Contests" "https://codeforces.com/contests"
+            "https://codeforces.org/s/12212/android-icon-192x192.png"
+          )
+          (mark "Codeforces Problemset" "https://codeforces.com/problemset"
+            "https://codeforces.org/s/12212/android-icon-192x192.png"
+          )
+          (mark "atcoder" "https://atcoder.jp/contests" "https://img.atcoder.jp/assets/favicon.png")
+          (mark "codechef" "https://www.codechef.com/contests" "https://www.codechef.com/favicon.ico")
         ])
 
         ++ (groupByFolder "Github" [
@@ -164,8 +172,16 @@ in
           (mark "c3c" "https://github.com/c3lang/c3c" "https://github.githubassets.com/favicons/favicon.svg")
         ])
 
+        ++ (groupByFolder "Docs") [
+            (mark "Typst Docs" "https://typst.app/docs/" "https://typst.app/assets/apple-touch-icon.png")
+        ]
+
         ++ (groupByFolder "Uni" [
           (mark "TUC" "https://tu-chemnitz.de" "https://www.tu-chemnitz.de/tucal4/img/tuc.png")
+          (mark "TUC Mail" "https://mail.tu-chemnitz.de" "https://www.tu-chemnitz.de/tucal4/img/tuc.png")
+          (mark "TUC Gitlab" "https://gitlab.hrz.tu-chemnitz.de"
+            "https://www.tu-chemnitz.de/tucal4/img/tuc.png"
+          )
           (mark "Opal" "https://bildungsportal.sachsen.de/opal"
             "https://bildungsportal.sachsen.de/opal/raw/20250716/themes/opal_new/favicon.ico"
           )
