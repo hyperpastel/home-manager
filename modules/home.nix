@@ -1,5 +1,6 @@
 {
   pkgs,
+  flake-inputs,
   ...
 }:
 
@@ -17,25 +18,43 @@
     homeDirectory = "/home/v";
     stateVersion = "24.11";
 
-    packages = with pkgs; [
-      wofi
-      element-desktop
-      nixd
-      typos-lsp
+    packages =
+      with pkgs;
+      [
+        wofi
+        element-desktop
+        nixd
+        typos-lsp
 
-      wineWow64Packages.stagingFull
-      wl-clipboard
+        wineWow64Packages.stagingFull
+        wl-clipboard
 
-      # For screenshots
-      grimblast
-      grim
-      slurp
+        # For screenshots
+        grimblast
+        grim
+        slurp
 
-      # needed for neovim treesitter
-      nodejs
-      gcc
-    ];
+        # needed for neovim treesitter
+        nodejs
+        gcc
+
+        nix-output-monitor
+
+        # Programs for typst
+        typst
+        tinymist
+
+        # Various fonts
+        noto-fonts
+        nerd-fonts.iosevka-term-slab
+        atkinson-hyperlegible-next
+      ]
   };
+
+  # For managing fonts with home-manager
+  # https://github.com/nix-community/home-manager/issues/605
+
+  fonts.fontconfig.enable = true;
 
   programs.zathura = {
     enable = true;
