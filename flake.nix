@@ -9,8 +9,8 @@
     };
 
     scripts = {
-        url = "github:hyperpastel/scripts";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hyperpastel/scripts";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
