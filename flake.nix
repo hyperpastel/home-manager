@@ -8,6 +8,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    scripts = {
+        url = "github:hyperpastel/scripts";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =

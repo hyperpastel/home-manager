@@ -2,6 +2,7 @@ let
   PROMPT = "'\${PROJECT_PREFIX:+\$(__get_shell_prefix) }[%1~] %F{green}\${vcs_info_msg_0_}%F{white}$ '";
 in
 {
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -60,6 +61,10 @@ in
 
       opsol = "zathura solution.pdf & disown";
       optask = "zathura task.pdf & disown";
+
+      opjrnl = ''
+        zsh -c "cd ~/daily && mkdaily \"Journal for $(date +%Y-%m-%d)\""
+      '';
     };
 
     initContent = ''

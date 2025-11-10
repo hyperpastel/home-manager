@@ -39,7 +39,28 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "scripts": "scripts"
+      }
+    },
+    "scripts": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1762115530,
+        "narHash": "sha256-lCJF5YZZ24uWr/UM28zgwodhbrairM77ep37XV3cTjs=",
+        "owner": "hyperpastel",
+        "repo": "scripts",
+        "rev": "e6ef0432b4105e9a03476722b2a931a8cf94d83c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hyperpastel",
+        "repo": "scripts",
+        "type": "github"
       }
     }
   },

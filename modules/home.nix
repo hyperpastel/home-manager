@@ -49,6 +49,9 @@
         nerd-fonts.iosevka-term-slab
         atkinson-hyperlegible-next
       ]
+
+      # include my scripts!
+      ++ flake-inputs.scripts.scripts;
   };
 
   # For managing fonts with home-manager
