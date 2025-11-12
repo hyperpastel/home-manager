@@ -22,7 +22,7 @@
       with pkgs;
       [
         wofi
-        element-desktop
+        # element-desktop
         nixd
         typos-lsp
 
