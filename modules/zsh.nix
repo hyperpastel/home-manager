@@ -65,6 +65,11 @@ in
       opjrnl = ''
         zsh -c "cd ~/daily && mkdaily \"Journal for $(date +%Y-%m-%d)\""
       '';
+
+      chessnote = ''mknote ~ know chess'';
+      cpnote = ''mknote ~ know chess'';
+      studynote = ''mknote ~ know studying'';
+
     };
 
     initContent = ''

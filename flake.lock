@@ -50,11 +50,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762972660,
-        "narHash": "sha256-2pxHD3R3HFG6Iyary0QBo92zWgjlSBb/yReTW302bw0=",
+        "lastModified": 1763052182,
+        "narHash": "sha256-DUfO/s3zrfMYbBjVlSlhg0B2UtoQVdrFH0yEJ2C/ovQ=",
         "owner": "hyperpastel",
         "repo": "scripts",
-        "rev": "5b60dcb9ecb0a54f4e2499e8a4b49c76db12bd0b",
+        "rev": "4430b9707cb4b7c5fc9410fead6bc15296401295",
         "type": "github"
       },
       "original": {
