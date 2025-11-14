@@ -62,9 +62,9 @@ in
       opsol = "zathura solution.pdf & disown";
       optask = "zathura task.pdf & disown";
 
-      opjrnl = ''
-        zsh -c "cd ~/daily && mkdaily \"Journal for $(date +%Y-%m-%d)\""
-      '';
+      yday = "date +%Y-%m-%d -d \"-1day\"";
+      tday = "date +%Y-%m-%d";
+      tmrw = "date +%Y-%m-%d -d \"+1day\"";
 
       chessnote = ''mknote ~ know chess'';
       cpnote = ''mknote ~ know chess'';
