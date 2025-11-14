@@ -58,6 +58,7 @@ in
       hs = "cd ~/uni/hs/";
       db = "cd ~/uni/db/";
       alg = "cd ~/uni/algebra/";
+      m3 = "cd ~/uni/mathe-III/";
 
       opsol = "zathura solution.pdf & disown";
       optask = "zathura task.pdf & disown";
