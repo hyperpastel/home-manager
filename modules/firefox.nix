@@ -185,7 +185,18 @@ in
           (mark "Opal" "https://bildungsportal.sachsen.de/opal"
             "https://bildungsportal.sachsen.de/opal/raw/20250716/themes/opal_new/favicon.ico"
           )
-        ]);
+        ])
+
+        ++ (groupByFolder "Chess" [
+          (mark "chesscom" "https://chess.com" "https://chess.com/bundles/web/favicons/favicon.46041f2d.ico")
+          (mark "lichess" "https://lichess.org" "https://lichess1.org/assets/logo/lichess-favicon-512.png")
+          (mark "noctie" "https://app.noctie.ai" "https://app.noctie.ai/favicon.ico")
+          (mark "chessgames" "https://chessgames.com" "https://chessgames.com/favicon.ico")
+          (mark "chessly" "https://chessly.com" "https://chessly.com/logo/chessly-logo.ico")
+          (mark "chessigma" "https://chessigma.com" "https://chessigma.com/favicon.ico")
+        ])
+
+      ;
 
       SearchBar = "unified";
       SearchEngines = {
