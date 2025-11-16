@@ -6,6 +6,7 @@
 
 let
   nixos-icon = "https://raw.githubusercontent.com/NixOS/nixos-artwork/refs/heads/master/logo/nix-snowflake-rainbow.svg";
+  chesshandle = "vickydog69";
 in
 
 {
@@ -193,7 +194,15 @@ in
           (mark "noctie" "https://app.noctie.ai" "https://app.noctie.ai/favicon.ico")
           (mark "chessgames" "https://chessgames.com" "https://chessgames.com/favicon.ico")
           (mark "chessly" "https://chessly.com" "https://chessly.com/logo/chessly-logo.ico")
-          (mark "chessigma" "https://chessigma.com" "https://chessigma.com/favicon.ico")
+          (mark "chessigma" "https://www.chessigma.com/games?username=${chesshandle}"
+            "https://chessigma.com/favicon.ico"
+          )
+          (mark "cca" "https://www.chess.com/analysis"
+            "https://chess.com/bundles/web/favicons/favicon.46041f2d.ico"
+          )
+          (mark "loa" "https://lichess.org/analysis"
+            "https://lichess1.org/assets/logo/lichess-favicon-512.png"
+          )
         ])
 
       ;
