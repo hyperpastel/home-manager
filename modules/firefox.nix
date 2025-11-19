@@ -197,6 +197,7 @@ in
           (mark "chessigma" "https://www.chessigma.com/games?username=${chesshandle}"
             "https://chessigma.com/favicon.ico"
           )
+          (mark "chessable" "https://chessable.com" "https://chessable.com/favicon.ico")
           (mark "cca" "https://www.chess.com/analysis"
             "https://chess.com/bundles/web/favicons/favicon.46041f2d.ico"
           )
