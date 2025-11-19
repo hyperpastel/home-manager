@@ -19,7 +19,7 @@ in
 
     shellAliases = {
       l = "eza -la";
-      update = "sudo nixos-rebuild switch --flake ~/.config/system";
+      update = "nh os switch --accept-flake-config ~/.config/system";
       power = "cat /sys/class/power_supply/BAT0/capacity";
 
       hms = "nh home switch ~/.config/home-manager";
