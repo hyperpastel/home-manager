@@ -206,6 +206,10 @@ in
           )
         ])
 
+        ++ (groupByFolder "Heroes" [
+          (mark "OE Hotkeys" "https://steamcommunity.com/app/3105440/discussions/0/506217282369868431/" "https://steamcommunity.com/favicon.ico")
+        ])
+
       ;
 
       SearchBar = "unified";
