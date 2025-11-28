@@ -25,9 +25,9 @@ in
       hms = "nh home switch ~/.config/home-manager";
 
       # Quick commands for editing important configurations
-      vimconfig = "nix shell nixpkgs\\#lua-language-server --command nvim --cmd \"cd ~/.config/nvim\" ~/.config/nvim/init.lua";
-      hmconfig = "nvim --cmd \"cd ~/.config/home-manager/\" ~/.config/home-manager/";
-      sysconfig = "nvim --cmd \"cd ~/.config/system/\" ~/.config/system/";
+      # vimconfig = "nix shell nixpkgs\\#lua-language-server --command nvim --cmd \"cd ~/.config/nvim\" ~/.config/nvim/init.lua";
+      hmconfig = "hx -w ~/.config/home-manager/";
+      sysconfig = "hx -w ~/.config/system";
 
       # Abbreviations for common directories
       p = "cd ~/projects";

@@ -34,9 +34,9 @@
         grim
         slurp
 
-        # needed for neovim treesitter
-        nodejs
-        gcc
+        # # needed for neovim treesitter
+        # nodejs
+        # gcc
 
         nix-output-monitor
 
@@ -87,12 +87,17 @@
     };
   };
 
-  programs.neovim = {
+  # programs.neovim = {
+  #   enable = true;
+  #   defaultEditor = true;
+  #   plugins = with pkgs; [
+  #     vimPlugins.luasnip
+  #   ];
+  # };
+
+  programs.helix = {
     enable = true;
     defaultEditor = true;
-    plugins = with pkgs; [
-      vimPlugins.luasnip
-    ];
   };
 
   services.mako = {
